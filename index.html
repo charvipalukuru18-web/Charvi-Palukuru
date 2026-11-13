@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charvi Palukuru | Visual Communication & Editorial Designer</title>
+  <meta name="description" content="Portfolio of Charvi Palukuru – Visual communication designer, Editorial designer and Illustrator.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- SITE HEADER / TOP NAVIGATION -->
+  <header class="site-header">
+    <a href="#hero" class="brand-logo-link" aria-label="Charvi Palukuru Home">
+      <img src="Hero/original brand assets/original_CH_logo.svg" alt="Charvi Logo" class="brand-logo-img">
+    </a>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#heroScrollTrack" class="nav-link">Playground</a></li>
+        <li><a href="portfolio.html" class="nav-link">My Work</a></li>
+        <li><a href="about.html" class="nav-link">About Me</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- MAIN SCROLL TRACK (Drives 3D Cube Flip & Falling-Box Animation) -->
+  <main>
+    <!-- MAIN SCROLL TRACK (Drives Central Cube Rotation, Box Fall, Paper Spill & Zoom Transition) -->
+    <section class="hero-scroll-track" id="heroScrollTrack">
+      <div class="hero-viewport-sticky" id="hero">
+        
+        <!-- HERO STAGE CONTAINER -->
+        <div class="hero-stage" id="heroStage">
+          <div class="hero-content-wrapper" id="heroContentWrapper">
+            
+            <!-- Bookshelf Column (Interactive trigger & fades on scroll) -->
+            <div class="bookshelf-container js-fade-element" id="bookshelfBtn" role="button" tabindex="0" aria-label="Explore things I like to do in my free time">
+              <div class="bookshelf-artwork-wrapper">
+                <img src="Hero/illlustrations/bookshelf illustration.png" alt="Illustrated bookshelf" class="bookshelf-img">
+              </div>
+              
+              <!-- Bookshelf Hover Callout Indicator & Label (Positioned cleanly below the shelf) -->
+              <div class="shelf-hover-indicator" aria-hidden="true">
+                <svg class="indicator-svg" viewBox="0 0 320 210">
+                  <!-- Origin Dot on the shelf book spine (x: 76, y: 14) -->
+                  <circle cx="76" cy="14" r="4" />
+                  <!-- Curved connecting line wrapping down-left and across below the shelf -->
+                  <path d="M 76 14 H 24 A 14 14 0 0 0 10 28 V 146 A 14 14 0 0 0 24 160 H 100" />
+                  <!-- Terminating Dot to the left of the text (x: 100, y: 160) -->
+                  <circle cx="100" cy="160" r="4" />
+                </svg>
+                <p class="shelf-hover-label">Things i like to do<br>in my free time</p>
+              </div>
+            </div>
+
+            <!-- Central 3D Cube Container (Incorporates all 3 hero aspects + box stage in continuous 3D rotation) -->
+            <div class="central-cube-perspective">
+              <div class="central-cube" id="centralCube">
+                
+                <!-- CUBE FACE 1 (0deg - FRONT): TITLE ARTWORK -->
+                <div class="central-cube-face cube-face-front">
+                  <div class="hero-title-container">
+                    <img src="Hero/original brand assets/hero page title-02.png" alt="Hello i'm Charvi Palukuru" class="hero-title-artwork">
+                  </div>
+                </div>
+
+                <!-- CUBE FACE 2 (90deg - RIGHT): ROLE DESCRIPTOR -->
+                <div class="central-cube-face cube-face-right">
+                  <div class="cube-description-container">
+                    <p class="cube-role-text">Visual communication designer,<br>Editorial designer<br>and Illustrator</p>
+                  </div>
+                </div>
+
+                <!-- CUBE FACE 3 (180deg - BACK): BOOKSHELF ILLUSTRATION -->
+                <div class="central-cube-face cube-face-back">
+                  <div class="bookshelf-container js-cube-bookshelf" id="cubeBookshelfBtn" role="button" tabindex="0" aria-label="Explore things I like to do in my free time">
+                    <div class="bookshelf-artwork-wrapper">
+                      <img src="Hero/illlustrations/bookshelf illustration.png" alt="Illustrated bookshelf" class="bookshelf-img">
+                    </div>
+                    <!-- Hover Callout Indicator & Label on Cube Face -->
+                    <div class="shelf-hover-indicator" aria-hidden="true">
+                      <svg class="indicator-svg" viewBox="0 0 320 210">
+                        <circle cx="76" cy="14" r="4" />
+                        <path d="M 76 14 H 24 A 14 14 0 0 0 10 28 V 146 A 14 14 0 0 0 24 160 H 100" />
+                        <circle cx="100" cy="160" r="4" />
+                      </svg>
+                      <p class="shelf-hover-label">Things i like to do<br>in my free time</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CUBE FACE 4 (270deg - LEFT): CENTRED COLOUR-BOX & FALLING-BOX STAGE -->
+                <div class="central-cube-face cube-face-left">
+                  <div class="box-camera-rig" id="boxCameraRig">
+                    <div class="box-stage-wrapper" id="boxStageWrapper">
+                      
+                      <!-- Centred 3x3 Grid of 8 Static Remaining Boxes -->
+                      <div class="boxes-grid-container">
+                        <img src="Hero/illlustrations/Box-01.png" alt="Colour storage boxes" class="boxes-base-artwork">
+
+                        <!-- The Falling Box Body & Detachable Lid (Top-Right Slot) -->
+                        <div class="falling-box-container" id="fallingBox">
+                          <img src="Hero/illlustrations/falling box.png" alt="Falling box body" class="falling-box-body">
+                          <img src="Hero/illlustrations/falling box lid.png" alt="Falling box lid" class="falling-box-lid" id="fallingLid">
+                        </div>
+                      </div>
+
+                      <!-- Text appearing when box hits the floor -->
+                      <div class="my-works-label" id="myWorksLabel" aria-hidden="true">.....My Works!</div>
+
+                      <!-- 4 Scattered Paper Elements Spilling Onto Floor -->
+                      <div class="scattered-papers-container" id="scatteredPapersContainer" aria-hidden="true">
+                        <div class="paper-item paper-1 js-paper">
+                          <img src="Hero/illlustrations/paper 1.png" alt="Scattered sheet 1">
+                        </div>
+                        <div class="paper-item paper-2 js-paper">
+                          <img src="Hero/illlustrations/paper 2.png" alt="Scattered sheet 2">
+                        </div>
+                        <div class="paper-item paper-3 js-paper">
+                          <img src="Hero/illlustrations/paper 3.png" alt="Scattered sheet 3">
+                        </div>
+                        <div class="paper-item paper-4 js-paper">
+                          <img src="Hero/illlustrations/paper 4.png" alt="Scattered sheet 4">
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right Role Descriptor (Fades on scroll) -->
+            <div class="hero-description-container js-fade-element">
+              <p class="hero-role-text">Visual communication designer, Editorial designer and Illustrator</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOLDER POP-UP MODAL OVERLAY (Triggered by Bookshelf) -->
+    <div class="folder-modal-overlay" id="folderModal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="folder-cascade-container">
+        
+        <!-- Folder 2: Stitching (Left / Back layer) -->
+        <div class="folder-card folder-card-stitching" id="folderCardStitching" tabindex="0">
+          <button class="folder-close-btn js-single-folder-close" data-target="folderCardStitching" aria-label="Close stitching folder">
+            <svg class="folder-close-svg" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <line x1="5" y1="5" x2="19" y2="19"></line>
+              <line x1="19" y1="5" x2="5" y2="19"></line>
+            </svg>
+          </button>
+          <img src="Hero/illlustrations/folder illustration-02.png" alt="Stitching folder illustration">
+        </div>
+
+        <!-- Folder 1: Fostering Cats (Center / Middle layer) -->
+        <div class="folder-card folder-card-cats" id="folderCardCats" tabindex="0">
+          <button class="folder-close-btn js-single-folder-close" data-target="folderCardCats" aria-label="Close fostering cats folder">
+            <svg class="folder-close-svg" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <line x1="5" y1="5" x2="19" y2="19"></line>
+              <line x1="19" y1="5" x2="5" y2="19"></line>
+            </svg>
+          </button>
+          <img src="Hero/illlustrations/folder illustration-01.png" alt="Fostering cats folder illustration">
+        </div>
+
+        <!-- Folder 3: Playing Board Games (Right / Front layer) -->
+        <div class="folder-card folder-card-games" id="folderCardGames" tabindex="0">
+          <button class="folder-close-btn js-single-folder-close" data-target="folderCardGames" aria-label="Close playing board games folder">
+            <svg class="folder-close-svg" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+              <line x1="5" y1="5" x2="19" y2="19"></line>
+              <line x1="19" y1="5" x2="5" y2="19"></line>
+            </svg>
+          </button>
+          <img src="Hero/illlustrations/folder illustration-03.png" alt="Playing board games folder illustration">
+        </div>
+
+        <!-- Callout Indicator line on Modal -->
+        <div class="modal-callout-wrapper">
+          <svg class="modal-callout-line" viewBox="0 0 80 50">
+            <path d="M 70 10 C 20 10, 15 35, 15 45" />
+            <circle cx="70" cy="10" r="3.5" />
+            <circle cx="15" cy="45" r="3.5" />
+          </svg>
+          <p class="modal-callout-text">Things i like to do in my free time</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PORTFOLIO SECTION (Definitive Interactive Paper Stack) -->
+    <section class="portfolio-section" id="portfolio" aria-label="Portfolio Selected Works">
+      <div class="portfolio-stage-container">
+        
+        <!-- Previous Navigation Arrow -->
+        <button class="portfolio-nav-arrow arrow-prev" id="homePrevArrow" aria-label="Previous project">
+          <img src="Portfolio/assets/next and before arrow.png" alt="Previous project" class="arrow-icon">
+        </button>
+
+        <!-- Interactive Paper Stack Stage -->
+        <div class="paper-stack-stage" id="homePaperStackStage" role="region" aria-label="Portfolio paper stack">
+          
+          <!-- CARD 1: Yellow Landscape -->
+          <article class="paper-card paper-card-1 is-active" data-index="0" id="home-card-1">
+            <a href="project-witness-to-fluorescent.html" class="paper-card-link" aria-label="Open A Witness to Fluorescent project">
+              <img src="Portfolio/assets/paper backround-01.png" alt="Yellow textured paper sheet - A Witness to Fluorescent" class="paper-bg-img">
+            </a>
+          </article>
+
+          <!-- CARD 2: Blue-Grey Landscape -->
+          <article class="paper-card paper-card-2" data-index="1" id="home-card-2">
+            <a href="project-god-of-small-things.html" class="paper-card-link" aria-label="Open God of Small Things project">
+              <img src="Portfolio/assets/paper backround-02.png" alt="Blue-grey textured paper sheet - God of Small Things" class="paper-bg-img">
+            </a>
+          </article>
+
+          <!-- CARD 3: Dark Purple Portrait -->
+          <article class="paper-card paper-card-3" data-index="2" id="home-card-3">
+            <a href="project-fiddle-gum.html" class="paper-card-link" aria-label="Open Fiddle Gum project">
+              <img src="Portfolio/assets/paper backround-03.png" alt="Dark purple textured paper sheet - Fiddle Gum" class="paper-bg-img">
+            </a>
+          </article>
+
+          <!-- CARD 4: Sage Green Portrait -->
+          <article class="paper-card paper-card-4" data-index="3" id="home-card-4">
+            <a href="project-type-tower.html" class="paper-card-link" aria-label="Open Type Tower project">
+              <img src="Portfolio/assets/paper backround-04.png" alt="Sage green textured paper sheet - Type Tower" class="paper-bg-img">
+            </a>
+          </article>
+
+          <!-- CARD 5: Terracotta Portrait -->
+          <article class="paper-card paper-card-5" data-index="4" id="home-card-5">
+            <a href="project-cataka-branding.html" class="paper-card-link" aria-label="Open Cataka Branding project">
+              <img src="Portfolio/assets/paper backround-05.png" alt="Terracotta textured paper sheet - Cataka Branding" class="paper-bg-img">
+            </a>
+          </article>
+
+          <!-- CARD 6: Slate Grey Portrait -->
+          <article class="paper-card paper-card-6" data-index="5" id="home-card-6">
+            <a href="project-playing-cards.html" class="paper-card-link" aria-label="Open Playing Cards project">
+              <img src="Portfolio/assets/paper backround-06.png" alt="Slate grey textured paper sheet - Playing Cards" class="paper-bg-img">
+            </a>
+          </article>
+
+        </div>
+
+        <!-- Next Navigation Arrow -->
+        <button class="portfolio-nav-arrow arrow-next" id="homeNextArrow" aria-label="Next project">
+          <img src="Portfolio/assets/next and before arrow.png" alt="Next project" class="arrow-icon">
+        </button>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" id="contact">
+    <p>&copy; 2026 Charvi Palukuru. All rights reserved.</p>
+    <p>Designed with intentionality.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
